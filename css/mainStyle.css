@@ -7,6 +7,11 @@ body, html, ul, li, div, h1, img{
     padding: 0;
     margin: 0;
 }
+/* scroll prevent */
+.stop-scrolling{
+    height: 100%; 
+    overflow: hidden; 
+}
 ul{
     list-style-type: none;
 }
@@ -36,6 +41,84 @@ header{
 section{
     width: 100%;
 }
+
+/* modal */
+.modal_wrap{
+    display: none;
+    width: 100%;
+    height: 100%;
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 10;
+    background-color: rgba(0,0,0,0.7); 
+  }
+  .modal_wrap .container{
+    width: 100%;
+    max-width: 1020px;
+    margin: 20% auto ;
+  }
+  .modal_wrap .container .header{
+     display: flex;
+     align-items: center;
+     justify-content: space-between;
+     height: 100px;
+     border: 4px solid #ff9536;
+     border-radius: 14px;
+     background: #fff;
+     box-shadow: 5px 5px 10px 5px rgba(255,255,255,0.2);
+  }
+  .modal_wrap .container .header .title{
+     display: inline-block;
+     margin: 10px;
+     font-size: 20px;
+     color: #bd5a00;
+  }
+  .modal_wrap .container .header .search{
+     display: flex;
+     flex-shrink: 1;
+     flex-basis: 500px;
+     margin: 10px;
+ }
+ #search_txt{
+     flex: 1 0 300px;
+     height: 50px;  
+     border: 1px solid #ffecd9;
+     border-radius: 7px;
+     background-color: #ffecd9;
+     box-sizing: border-box;
+     vertical-align: middle;
+     outline: none;
+     text-indent: 10px;
+     font-size: 17px;
+ }
+ .modal_wrap .container .btn{
+    height: 50px;
+    border: none;
+    border-radius: 7px;
+    background-color: #ff9536;
+    color: #fff;
+    font-size: 18px;
+ }
+ .modal_wrap .container .header .search .btn_search{
+     flex: 1;
+     margin: 0 5px;
+     vertical-align: middle;
+     outline: none;
+     cursor: pointer;
+ }
+ .modal_wrap .container .close_wrap {
+     width: 100%;
+     margin-top: 50px;
+    text-align: center;
+ }
+ .modal_wrap .container .btn_close{
+     border-radius: 50%;
+     width: 50px;
+     height: 50px;
+     cursor: pointer;
+ }
+
 
 
  @media screen and (max-width: 768px){
@@ -144,6 +227,30 @@ section{
         font-weight: bold;
         text-decoration: underline;
     }
+
+    /* MODAL */
+    .modal_wrap .container .header{
+        height: 70px;
+     }
+     .modal_wrap .container .header .title{
+        font-size: 14px;
+        text-align: center;
+     }
+    #search_txt{
+        flex: 2 0 100px;
+        height: 30px;  
+        font-size: 14px;
+    }
+    .modal_wrap .container .btn{
+       flex: 1 0 auto;
+       height: 30px;
+       font-size: 14px;
+    }
+    .modal_wrap .container .btn_close{
+        width: 40px;
+        height: 40px;
+    }
+    /* SECTION */
     section{
         width: 100%;
     }
@@ -197,6 +304,7 @@ section{
         font-size: 40px;
         transition: 0.6s ease;
         border-radius: 50%;
+        cursor: pointer;
     }
     .prev{
         position: absolute;
@@ -438,7 +546,6 @@ section{
 
 
     /* section */
-
     .main_banner_wrap{
         position: relative;
         width: 100%;

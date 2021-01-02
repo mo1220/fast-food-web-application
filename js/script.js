@@ -1,8 +1,21 @@
-var API_url = 'http://floating-harbor-78336.herokuapp.com/fastfood';
+const API_url = 'http://floating-harbor-78336.herokuapp.com/fastfood';
+
+// const param = window.location.search
+// const decodeName = decodeURI(decodeURIComponent(param)); 
+const param_keyword = getParameterByName('search');
+param_keyword && search(1, 10, param_keyword);
+
+function getParameterByName(name) {
+    name = name.replace(/[\[]/, "\\[").replace(/[\]]/, "\\]");
+    var regex = new RegExp("[\\?&]" + name + "=([^&#]*)"),
+            results = regex.exec(location.search);
+    return results == null ? "" : decodeURIComponent(results[1].replace(/\+/g, " "));
+}
+
 
 $(function(){
     $('.btn_search').click(function(){
-        var search_Keyword = $('#search_txt').val(); //val()함수는 input태그, textarea 태그 등에서 현재 입력되어 있는 값을 가져올 때 사용
+        let search_Keyword = $('#search_txt').val(); //val()함수는 input태그, textarea 태그 등에서 현재 입력되어 있는 값을 가져올 때 사용
          search(1, 10, search_Keyword);
     });
 
@@ -15,6 +28,7 @@ $(function(){
  });
 
  function search(page, perPage, search_Keyword){
+     console.log(search_Keyword)
          if(typeof page !== 'number' || page < 1){
              page = 1;
          }
@@ -26,15 +40,15 @@ $(function(){
              perPage: perPage,
              searchKeyword:search_Keyword
              }, function(data){
-                     var list = data.list;
-                     var total = data.total;
+                     let list = data.list;
+                     let total = data.total;
 
                      $('.total').html('총' + total+ '개의 패스트푸드점을 찾았습니다.');
-                     var $list = $('.list').empty();
-                     for(var i=0; i<list.length; i++){
-                         var item = list[i];
+                     let $list = $('.list').empty();
+                     for(let i=0; i<list.length; i++){
+                         let item = list[i];
 
-                         var $elem = $('#item-templete')
+                         let $elem = $('#item-templete')
                          .clone()
                          .removeAttr('id');
 
@@ -49,31 +63,31 @@ $(function(){
                  });
     }
     function showPaging(page, perPage, total, search_Keyword){
-        var $paging = $('.paging').empty(); //empty() 셀렉트된 엘리먼트들의 자식 엘리먼트들 모두 삭제
-        var numberPages = 5;
-        var pageStart = Math.floor((page - 1) / numberPages) * numberPages + 1;
-        var pageEnd = pageStart + numberPages - 1;
-        var totalPages = Math.floor((total - 1) / perPage) + 1;
+        let $paging = $('.paging').empty(); //empty() 셀렉트된 엘리먼트들의 자식 엘리먼트들 모두 삭제
+        let numberPages = 5;
+        let pageStart = Math.floor((page - 1) / numberPages) * numberPages + 1;
+        let pageEnd = pageStart + numberPages - 1;
+        let totalPages = Math.floor((total - 1) / perPage) + 1;
 
         if(pageEnd > totalPages){
             pageEnd = totalPages;
         }
 
-        var prevPage = pageStart - 1;
+        let prevPage = pageStart - 1;
 
         if(prevPage < 1)
             prevPage = 1;
 
-        var nextPage = pageEnd + 1;
+        let nextPage = pageEnd + 1;
         if(nextPage > totalPages)
             nextPage = totalPages;
 
-        var $prevElem = $('<a href="javascript:search('+prevPage+','+perPage+',\''+search_Keyword+'\')">이전</a>');
+        let $prevElem = $('<a href="javascript:search('+prevPage+','+perPage+',\''+search_Keyword+'\')">이전</a>');
         $prevElem.addClass('prev');
         $paging.append($prevElem);
 
-        for(var i=pageStart; i<=pageEnd; i++){
-            var $elem = $('<a href="javascript:search('+i+','+perPage+',\''+search_Keyword+'\')">' +i+ '</a>');
+        for(let i=pageStart; i<=pageEnd; i++){
+            let $elem = $('<a href="javascript:search('+i+','+perPage+',\''+search_Keyword+'\')">' +i+ '</a>');
                 $elem.addClass('page_link');
 
             if(i === page ){
@@ -83,7 +97,7 @@ $(function(){
             $paging.append($elem);
         }
 
-         var $nextElem = $('<a href="javascript:search('+nextPage+','+perPage+',\''+search_Keyword+'\')">다음</a>');
+         let $nextElem = $('<a href="javascript:search('+nextPage+','+perPage+',\''+search_Keyword+'\')">다음</a>');
                 $nextElem.addClass('next');
                 $paging.append($nextElem);
     }

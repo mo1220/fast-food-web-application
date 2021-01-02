@@ -60,7 +60,7 @@
                 </nav>
                 <!-- 수정 -->
                 <div class="icon_wrap">
-                    <a href="searchFastFood.html" class="search_icon">
+                    <a href="#" class="search_icon">
                         <img src="image/search_btn.png" alt="검색창 아이콘" />
                     </a>
                     <a href="#" class="menu_icon">
@@ -71,6 +71,21 @@
             <div class="sub_menu_wrap"></div>
         </header>
 
+        <!-- modal -->
+        <div class="modal_wrap">
+            <div class="container">
+                <div class="header">
+                    <h1 class="title">패스트푸드점 찾기</h1>
+                    <div class="search">
+                        <input type="text" id="search_txt" placeholder="검색할 단어를 입력하세요.">
+                        <button class="btn btn_search btn_search_main">검색</button>
+                    </div>
+                </div>
+                <div class="close_wrap">
+                    <button class="btn btn_close">X</button>
+                </div>
+            </div>
+        </div>
         <section>
             <div class="main_banner_wrap">
 
@@ -106,7 +121,6 @@
                     <span class="dot" onclick="currentSlides(4)"></span>
                     <span class="dot" onclick="currentSlides(5)"></span>
                 </div>
-                <script src="js/MainScript.js"></script>
             </div>
 
             <div class="list_wrap">
@@ -167,6 +181,8 @@
             </div>
         </footer>
     </div>
+    <script src="js/MainScript.js"></script>
+    <!-- <script src="js/script.js"></script> -->
 </body>
 
 </html>
