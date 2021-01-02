@@ -1,0 +1,164 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+    <meta charset="UTF-8" name="viewport" content="width=divice-width, initial-scale=1, maximum-scale=1">
+    <title>Welcome To FastFood Website</title>
+    <link rel="stylesheet" href="css/mobileStyle.css">
+    <script src="libs/jquery-3.5.1.min.js"></script>
+</head>
+<body>
+    <div class="wrap">
+        <header>
+            <div class="header_wrap">
+                <a href="main.html" class="main_link">
+                    <span class="blind">메인로고링크</span>
+                    <div class="logo_img"></div>
+                </a>    
+                    
+                <nav class="navigation">
+                    <ul class="menu">
+                        <li class="main_menu">
+                            <a href="#" class="menu_link" onHo>Menu</a>
+                             <ul class="sub_list">
+                                <li class="sub_item"><a href="#">버거</a></li>
+                                <li class="sub_item"><a href="#">세트 메뉴</a></li>
+                                <li class="sub_item"><a href="#">사이드 메뉴</a></li>
+                            </ul>
+                        </li>
+
+                        <li class="main_menu">
+                            <a href="#" class="menu_link">store</a>
+                            <ul class="sub_list">
+                                <li class="sub_item"><a href="#">매장찾기</a></li>
+                                <li class="sub_item"><a href="#">매장찾기</a></li>
+                                <li class="sub_item"><a href="#">매장찾기</a></li>
+                            </ul>    
+                        </li>
+                        <li class="main_menu">
+                            <a href="#" class="menu_link">what's New</a>
+                            <ul class="sub_list">
+                                <li class="sub_item"><a href="#">새로운 소식</a></li>
+                                <li class="sub_item"><a href="#">프로모션</a></li>
+                            </ul>
+                        </li>
+                        <li class="main_menu">
+                            <a href="#" class="menu_link">story</a>
+                            <ul class="sub_list">
+                                <li class="sub_item"><a href="#">제작자 소개</a></li>
+                                <li class="sub_item"><a href="#">기타</a></li>
+                            </ul>
+                        </li>
+                    </ul>
+                </nav>
+                <!-- 수정 -->
+                <div class="icon_wrap">
+                    <a href="searchFastFood.html" class="search_icon">
+                        <img src="image/search_btn.png" alt="검색창 아이콘"/>
+                    </a>
+                    <a href="#" class="menu_icon">
+                        <img src="image/icon_menu.png" alt="메뉴아이콘">
+                    </a>
+                </div>
+                
+            </div>
+            <div class="sub_menu_wrap"></div>
+        </header>
+
+        <section>
+            <div class="main_banner_wrap">
+                
+                <div class="slideShow">
+                    <div class="slides fade">
+                       <a href=""></a> <img class="main_banner_img" src="image/main_banner1.jpg"></img>
+                    </div>
+                    <div class="slides fade">
+                        <img class="main_banner_img" src="image/main_banner2.jpg"></img>
+                    </div>
+                    
+                    <div class="slides fade">
+                        <img class="main_banner_img" src="image/main_banner3.jpg"></img>
+                    </div>
+
+                    <div class="slides fade">
+                        <img class="main_banner_img" src="image/main_banner4.jpg"></img>
+                    </div>
+
+                    <div class="slides fade">
+                        <img class="main_banner_img" src="image/main_banner5.jpg"></img>
+                    </div>        
+                </div>
+                <div class="arrow_wrap">
+                    <a class="prev" onclick="plusSlides(-1)">&#10094;</a>
+                    <a class="next" onclick="plusSlides(1)">&#10095;</a>    
+                </div>
+
+                <div class="dot_wrap">
+                    <span class="dot" onclick="currentSlides(1)"></span>
+                    <span class="dot" onclick="currentSlides(2)"></span>
+                    <span class="dot" onclick="currentSlides(3)"></span>
+                    <span class="dot" onclick="currentSlides(4)"></span>
+                    <span class="dot" onclick="currentSlides(5)"></span>
+                </div>
+                <script src="js/MainScript.js"></script>
+            </div>
+
+            <div class="list_wrap">
+                <h1 class="list_title"> New Menu</h1>
+                <ul class="list">
+                    <li class="list_item">
+                        <a href="">
+                            <img src="image/list.png" alt="리스트1">
+                            <div class="list_txt">신메뉴 출시!</div>
+                        </a>
+                    </li>
+                    <li class="list_item">
+                        <a href="">
+                            <img src="image/list2.png" alt="리스트2">
+                            <div class="list_txt">맥주 & 햄버거 & 감자튀김</div>
+                        </a>
+                    </li>
+                    <li class="list_item">
+                        <a href="">
+                            <img src="image/list3.png" alt="리스트3">
+                            <div class="list_txt">햄버거 & 감자튀김 Set</div>
+                        </a>
+                    </li>
+                    <li class="list_item">
+                        <a href="">
+                            <img src="image/list4.png" alt="리스트4">
+                            <div class="list_txt">딜리버리 시작!</div>
+                        </a>
+                    </li>
+                    <li class="list_item">
+                        <a href="">
+                            <img src="image/list5.png" alt="리스트5">
+                            <div class="list_txt">핫소스 버거</div>
+                        </a>
+                    </li>
+                    <li class="list_item">
+                        <a href="">
+                            <img src="image/list6.png" alt="리스트6">
+                            <div class="list_txt">핫소스 버거2</div>
+                        </a>
+                    </li>
+                </ul>
+                <div class="btn_wrap">
+                    <button type="button" class="more_btn"><span class="plus">+</span> MORE</button>        
+                </div>
+            </div>
+        </section>
+
+        <footer>
+            <div class="footer_list">
+                <a href="#">회사소개</a>
+                <a href="#">인재채용</a>
+                <a href="#">이용약관</a>
+                <a href="#">고객센터</a>
+            </div>
+            <div class="footer_copy">
+                <span>©<strong> foodwith</strong> All Right Reserved.</span>
+            </div>
+        </footer>
+    </div>
+</body>
+</html>
